@@ -1,0 +1,43 @@
+✅ 資料清洗完成
+產出資料夾：
+
+cleaned_data/
+依照 
+
+智慧旅宿滯銷風險預警平台_提報簡報.pptx
+ 的 10 步驟流程（①~⑩）製作：
+
+檔案	說明	筆數 / 欄位
+
+
+01_listings_cleaned.csv
+清洗後完整 listings + 標籤 Y	5,849 × 22
+
+
+02_structured_features.csv
+結構化特徵（原始尺度）	5,849 × 13
+
+
+03_structured_features_scaled.csv
+結構化特徵（MinMax 標準化）	5,849 × 13
+
+
+04_nlp_proxy_features.csv
+NLP 情緒代理特徵（評論活躍度/衰退/密度）	5,849 × 5
+
+
+05_merged_features_for_model.csv
+融合特徵矩陣（直接拿去訓練模型）	5,849 × 16
+
+
+06_calendar_avail_rate.csv
+Calendar 空房率聚合	6,241 × 4
+
+
+07_reviews_aggregated.csv
+Reviews 評論統計聚合	5,054 × 4
+清洗重點（對應 pptx Step ②③）
+價格：718 筆遺漏值→中位數填補，IQR 法移除 392 筆極端值
+標籤 Y 定義（防資料洩漏）：近12月評論數 ≤ 1 則 且 空房率 ≥ 70% → 滯銷
+標籤分佈：滯銷 17.4%（1,018 筆） / 正常 82.6%（4,831 筆）— 符合不平衡分類場景
+特徵：12個結構化特徵 + 3個NLP代理特徵（因 reviews.csv 無文字內容）
