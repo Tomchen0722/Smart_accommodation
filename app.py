@@ -455,7 +455,7 @@ with T1:
             hover_name="neighbourhood",
             hover_data={"price":True,"risk_score":":.3f",
                         "number_of_reviews":True,"risk_level":False},
-            trendline="lowess", trendline_color_override=P["primary"],
+             trendline_color_override=P["primary"],
             labels={"price":"每晚價格(TWD)","risk_score":"滯銷風險分數","risk_level":""},
         )
         fig.update_traces(marker=dict(size=5, line=dict(width=0)),
